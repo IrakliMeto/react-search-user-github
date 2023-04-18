@@ -9,7 +9,7 @@ import './GitUsers.scss';
 export const GitUsers = () => {
   const [userName, setUserName] = useState('');
   const [userData, setUserData] = useState(null);
-  const [darkMode, setDarkMode] = useState(false);
+  const [lightMode, setLightMode] = useState(false);
 
   const userDataHandler = (e) => {
     setUserName(e.target.value);
@@ -29,14 +29,14 @@ export const GitUsers = () => {
       });
   };
 
-  const darkModeHandler = () => {
-    setDarkMode(!darkMode);
+  const lightModeHandler = () => {
+    setLightMode(!lightMode);
   };
 
   return (
-    <div className={`container ${darkMode ? 'dark-mode' : ''}`}>
+    <div className={`container ${lightMode ? 'light-mode' : ''}`}>
       <div className='container__inner'>
-        <Header onDarkMode={darkModeHandler} dark={darkMode} />
+        <Header onLightMode={lightModeHandler} lightMode={lightMode} />
 
         <SearchUser
           onUserDataChange={userDataHandler}
